@@ -61,23 +61,27 @@
   #### Tools
   - `uro`
   #### Example
-  ```sh
-  cat paras.txt| uro -o filterparam.txt
-  ```
+    ```sh
+    cat paras.txt| uro -o filterparam.txt
+    ```
   - Filtering `.js` files
-  ```sh
-  cat filterparam.txt|grep ".js$" > jsfiles.txt
-  ```
+    
+    ```sh
+    cat filterparam.txt|grep ".js$" > jsfiles.txt
+    ```
   then add some new lines
   #### Tools
   - `anew`
-    
-  ```sh
-  cat jsfiles.txt | uro | anew jsfiles.txt
-  ```
+
+    ```sh
+    cat jsfiles.txt | uro | anew jsfiles.txt
+    ```
   now let's find hidden secrets within jsfiles
     #### Tools
   - `SecretFinder`
-    
+
+    ```sh
+    cat jsfiles.txt| while read url; do python3 /home/arisemyafrica/Tools/secretfinder/SecretFinder.py -i $url -o cli >> secret.txt; done
+    ```
   
   
